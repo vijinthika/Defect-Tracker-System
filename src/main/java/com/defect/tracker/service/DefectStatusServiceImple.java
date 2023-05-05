@@ -23,7 +23,7 @@ public class DefectStatusServiceImple implements DefectStausService {
     @Override
     public void createDefectsStatus(DefectStatusRequest defectStatusRequest) {
         DefectStatus defectStatus=new DefectStatus();
-        BeanUtils.copyProperties(defectStatus,defectStatusRequest);
+        BeanUtils.copyProperties(defectStatusRequest,defectStatus);
         defectStatusRepository.save(defectStatus);
     }
 
@@ -34,7 +34,7 @@ public class DefectStatusServiceImple implements DefectStausService {
         for (DefectStatus d:defectStatuses
              ) {
             DefectStatusResponse defectStatusResponse=new DefectStatusResponse();
-            BeanUtils.copyProperties(defectStatusResponse,d);
+            BeanUtils.copyProperties(d,defectStatusResponse);
             defectStatusResponses.add(defectStatusResponse);
         }
         return defectStatusResponses;
@@ -44,7 +44,7 @@ public class DefectStatusServiceImple implements DefectStausService {
     public DefectStatusResponse getDefectStatusBYID(Long id) {
         DefectStatusResponse defectStatusResponse=new DefectStatusResponse();
         DefectStatus defectStatus=defectStatusRepository.findById(id).get();
-        BeanUtils.copyProperties(defectStatusResponse,defectStatus);
+        BeanUtils.copyProperties(defectStatus,defectStatusResponse);
         return defectStatusResponse;
     }
 

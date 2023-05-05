@@ -50,7 +50,7 @@ public class EmployeeServiceImple implements EmployeeService {
         EmployeeResponse employeeResponse = new EmployeeResponse();
         employeeResponse.setDesiginationName(employee.getDesignation().getName());
 
-        BeanUtils.copyProperties(employeeResponse, employee);
+        BeanUtils.copyProperties(employee, employeeResponse);
         return employeeResponse;
     }
 

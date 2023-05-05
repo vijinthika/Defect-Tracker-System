@@ -20,7 +20,7 @@ public class PriorityServiceImple implements PriorityService{
     @Override
     public void createPriority(PriorityRequest priorityRequest) {
         Priority priority=new Priority();
-        BeanUtils.copyProperties(priority,priorityRequest);
+        BeanUtils.copyProperties(priorityRequest,priority);
         pRepo.save(priority);
     }
 
@@ -31,7 +31,7 @@ public class PriorityServiceImple implements PriorityService{
         for (Priority p:priorities
              ) {
             PriorityResponse priorityResponse=new PriorityResponse();
-            BeanUtils.copyProperties(priorityResponse,p);
+            BeanUtils.copyProperties(p,priorityResponse);
             priorityResponses.add(priorityResponse);
         }
         return priorityResponses;
@@ -41,7 +41,7 @@ public class PriorityServiceImple implements PriorityService{
     public PriorityResponse getByPriorityID(Long id) {
         Priority priority=pRepo.findById(id).get();
         PriorityResponse priorityResponse=new PriorityResponse();
-        BeanUtils.copyProperties(priorityResponse,priority);
+        BeanUtils.copyProperties(priority,priorityResponse);
         return priorityResponse;
     }
 

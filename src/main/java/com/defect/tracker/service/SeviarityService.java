@@ -8,7 +8,7 @@ import java.util.List;
 public interface SeviarityService {
     public void createSevairity(SeviarityRequest seviarityRequest);
 
-    SeviarityResponse getBySevairityID(Long id);
+    public SeviarityResponse getBySevairityID(Long id);
 
     public List<SeviarityResponse> getAllSeviariy();
 

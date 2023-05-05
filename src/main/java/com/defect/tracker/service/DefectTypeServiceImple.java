@@ -20,7 +20,7 @@ public class DefectTypeServiceImple implements DefectTypeService {
     @Override
     public void createDefectType(DefectTypeRequest defectTypeRequest) {
         DefectType defectType = new DefectType();
-        BeanUtils.copyProperties(defectType, defectTypeRequest);
+        BeanUtils.copyProperties(defectTypeRequest, defectType);
         dRepo.save(defectType);
 
     }
@@ -32,7 +32,7 @@ public class DefectTypeServiceImple implements DefectTypeService {
         for (DefectType d : defectTypes
         ) {
             DefectTypeResponse defectTypeResponse = new DefectTypeResponse();
-            BeanUtils.copyProperties(defectTypeResponse, d);
+            BeanUtils.copyProperties(d, defectTypeResponse);
             defectTypeResponses.add(defectTypeResponse);
 
         }
@@ -43,7 +43,7 @@ public class DefectTypeServiceImple implements DefectTypeService {
     public DefectTypeResponse getDefectTypeBYID(Long id) {
         DefectTypeResponse defectTypeResponse = new DefectTypeResponse();
         DefectType defectType = dRepo.findById(id).get();
-        BeanUtils.copyProperties(defectTypeResponse, defectType);
+        BeanUtils.copyProperties(defectType, defectTypeResponse);
         return defectTypeResponse;
     }
 

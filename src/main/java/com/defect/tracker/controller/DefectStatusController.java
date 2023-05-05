@@ -16,13 +16,13 @@ public class DefectStatusController {
     @PostMapping("/createDefectStatus")
     public ResponseEntity<String> createDefectStatus(@RequestBody DefectStatusRequest defectStatusRequest) {
         defectStausService.createDefectsStatus(defectStatusRequest);
-        return new ResponseEntity<String>("New Defect is created", HttpStatus.OK);
+        return new ResponseEntity<String>("New Defect Status is created", HttpStatus.OK);
     }
 
     @PutMapping("/editDefectStatus")
     public ResponseEntity<String> editDefcetstatus(@RequestBody DefectStatusRequest defectStatusRequest) {
         defectStausService.createDefectsStatus(defectStatusRequest);
-        return new ResponseEntity<String>("Defect is updated", HttpStatus.OK);
+        return new ResponseEntity<String>("Defect status is updated", HttpStatus.OK);
 
     }
 
