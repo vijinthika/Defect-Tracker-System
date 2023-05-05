@@ -7,5 +7,6 @@ import org.springframework.stereotype.Service;
 @Getter
 @Setter
 public class DefectTypeRequest {
-
+    private Long id;
+    private String name;
 }
