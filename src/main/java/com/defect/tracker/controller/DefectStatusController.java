@@ -3,6 +3,7 @@ package com.defect.tracker.controller;
 import com.defect.tracker.dto.DefectStatusRequest;
 import com.defect.tracker.dto.DefectStatusResponse;
 import com.defect.tracker.service.DefectStausService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 public class DefectStatusController {
+    @Autowired
     private DefectStausService defectStausService;
 
     @PostMapping("/createDefectStatus")

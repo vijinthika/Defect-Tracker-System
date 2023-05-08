@@ -29,7 +29,7 @@ public class PriorityController {
         return new ResponseEntity<String>("the priority id"+priorityRequest.getId()+"is succefully edited",HttpStatus.OK);
     }
 
-    @GetMapping("/deletePriority/{id}")
+    @GetMapping("/getPriority/{id}")
     public ResponseEntity<PriorityResponse> getByPriorityID(@PathVariable(value = "id") Long id)
     {
        PriorityResponse priorityResponse= priorityService.getByPriorityID(id);

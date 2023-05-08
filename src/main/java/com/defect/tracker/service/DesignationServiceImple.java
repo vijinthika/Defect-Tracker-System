@@ -19,8 +19,12 @@ public class DesignationServiceImple implements DesignationService {
 
     @Override
     public void createDesignation(DesignationRequest designationRequest) {
+        //System.out.println("hello");
+        //System.out.println(designationRequest.getName());
         Designation designation = new Designation();
         BeanUtils.copyProperties(designationRequest, designation);
+        //designation.setId(designationRequest.getId());
+        //designation.setName(designationRequest.getName());
         designationRepository.save(designation);
     }
 
@@ -28,10 +32,9 @@ public class DesignationServiceImple implements DesignationService {
     public List<DesignationResponse> getAllDesignation() {
         List<DesignationResponse> designationResponses = new ArrayList<DesignationResponse>();
         List<Designation> designations = designationRepository.findAll();
-        for (Designation d : designations
-        ) {
+        for (Designation designation : designations) {
             DesignationResponse designationResponse = new DesignationResponse();
-            BeanUtils.copyProperties(d, designationResponse);
+            BeanUtils.copyProperties(designation, designationResponse);
             designationResponses.add(designationResponse);
         }
         return designationResponses;

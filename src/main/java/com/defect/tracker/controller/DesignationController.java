@@ -18,8 +18,12 @@ public class DesignationController {
     private DesignationService designationService;
 
     @PostMapping("/createDesignation")
-    public ResponseEntity<String > createDesignation(DesignationRequest designationRequest)
+    public ResponseEntity<String> createDesignation(@RequestBody DesignationRequest designationRequest)
     {
+        System.out.println(designationRequest.getName());
+        if(designationRequest.getName()==null){
+            System.out.println("Hiiiiiiiiiiii");
+        }
         designationService.createDesignation(designationRequest);
         return new ResponseEntity<String>("Designation is created", HttpStatus.OK);
     }

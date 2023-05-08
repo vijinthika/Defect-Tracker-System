@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RoleRequest {
-    private long id;
+    private Long id;
     private String name;
 }

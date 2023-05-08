@@ -21,6 +21,10 @@ public class DefectServiceImple implements DefcetService {
     public void createDefect(DefectRequest defectRequest) {
         Defect defect = new Defect();
 
+        Project project=new Project();
+        project.setId(defectRequest.getProjectId());
+        defect.setProject(project);
+
         Priority priority = new Priority();
         priority.setId(defectRequest.getPriorityId());
         defect.setPriority(priority);
@@ -29,13 +33,15 @@ public class DefectServiceImple implements DefcetService {
         seviarity.setId(defectRequest.getSeviarityId());
         defect.setSeviarity(seviarity);
 
+        DefectType defectType = new DefectType();
+        defectType.setId(defectRequest.getDefectTypeId());
+        defect.setDefectType(defectType);
+
         DefectStatus defectStatus = new DefectStatus();
         defectStatus.setId(defectRequest.getDefectStatusId());
         defect.setDefectStatus(defectStatus);
 
-        DefectType defectType = new DefectType();
-        defectType.setId(defectRequest.getDefectTypeId());
-        defect.setDefectType(defectType);
+
 
         Employee employee = new Employee();
         employee.setId(defectRequest.getAssignToId());

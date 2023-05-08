@@ -20,7 +20,7 @@ public class Project {
     private Date endDate;
     private Long contactNumber;
     private String contactPerson;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "project_status_id", nullable = false)
     private ProjectStatus projectStatus;
 

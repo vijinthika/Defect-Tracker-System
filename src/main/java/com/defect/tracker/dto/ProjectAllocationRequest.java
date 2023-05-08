@@ -10,5 +10,5 @@ public class ProjectAllocationRequest {
     private Long projectId;
     private Long employeeId;
     private Long roleId;
-
+    private String name;
 }

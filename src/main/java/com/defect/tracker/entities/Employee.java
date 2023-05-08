@@ -18,7 +18,7 @@ public class Employee {
     private String email;
     private String address;
     private Long phoneNumber;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "designation_id", nullable = false)
     private Designation designation;
 
